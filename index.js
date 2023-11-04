@@ -86,6 +86,10 @@ function buildRequestBody(data) {
 
 const app = fastify();
 
+app.get("/", async (_request, reply) => {
+  reply.send("hello, ampt!");
+});
+
 app.post("/translate", async (_request, reply) => {
   reply.send(await queryAPI(_request.body));
 });
